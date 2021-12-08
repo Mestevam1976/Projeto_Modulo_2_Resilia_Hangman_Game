@@ -6,9 +6,9 @@ geral_medianas = [
     'palavra', 'tesouro', 'caseiro', 'cenoura', 'pessego', 'duvidar', 'petroleo', 'revirado'
 ]
 
-geral_dificeis = [
-    'paralelepipedo', 'empoderamento', 'delineamento', 'caleidoscopio', 'polinesio', 'polifonico',
-]
+geral_dificeis = {
+    'paralelepipedo': 'dica: calçamento de rua', #'empoderamento', 'delineamento', 'caleidoscopio', 'polinesio', 'polifonico',
+}
 
 categoria_geral = [geral_faceis, geral_medianas, geral_faceis]
 
