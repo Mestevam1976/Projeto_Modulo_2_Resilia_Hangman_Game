@@ -4,7 +4,6 @@ import images
 import formatting
 from os import system, name  # importa informações sobre o sistema operacional em uso
 
-
 def limpa_tela():  # Limpa a tela removendo do prompt as informações sobre a localização dos arquivos
   # for windows
     if name == 'nt':
@@ -14,10 +13,9 @@ def limpa_tela():  # Limpa a tela removendo do prompt as informações sobre a l
         _ = system('clear')
 
 
-def escolhe_palavras(lista):
-
-    # Função Random e método choice - escolhe algo específico, no caso a lista
-    palavra = random.choice(lista)
+def escolhe_palavras(lista): # 
+    
+    palavra = random.choice(lista) # Função Random e método choice - escolhe algo específico, no caso a lista
     while '-' in palavra or ' ' in palavra:  # cria um laço que, inicialmente sem palavras em lista dá início
         palavra = random.choice(palavra)
 
@@ -147,7 +145,6 @@ Digite a, b ou c: ''')
         else:
             print('Favor digitar somente as letras "a", "b" ou "c"! ')
             opcao_nivel = False
-
 
 def caminho():
     if sum(indice_tema) == 0:
