@@ -1,5 +1,3 @@
-<<<<<<< Updated upstream
-=======
 geral_faceis = [
     'teste', 'gelo', 'dado', 'faca', 'mula', 'mola', 'terra', 'corda', 'carro'
 ]
@@ -27,4 +25,3 @@ tech_dificeis = [
 ]
 
 categoria_tech = [tech_faceis, tech_medianas, tech_dificeis]
->>>>>>> Stashed changes
