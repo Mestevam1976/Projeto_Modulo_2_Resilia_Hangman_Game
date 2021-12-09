@@ -346,7 +346,7 @@ def seleciona_letras(segredo, palavra_em_branco, numero_de_vidas):  # original s
 def valida_vidas(sinaliza_vidas, vidas):
     if sinaliza_vidas > 0:  # check if counter value > 0, if it is, user guessed correctly
         print("Número de vidas inalterado, vida(s) perdida(s): ", len(vidas))
-        # print(vidas)
+        #print(vidas)
         return vidas
     else:
         # if counter value not >0, then user guessed incorrectly. add "1" to numero_de_vidas as counter for lost vidas
@@ -367,7 +367,7 @@ def valida_vidas(sinaliza_vidas, vidas):
         if len(vidas) == 7:
             print(formatting.escolher_cor('yellow', images.forca[6]))
 
-        # print(vidas)
+        #print(vidas)
         return vidas
 #
 
@@ -392,15 +392,15 @@ def check_win(vidas, em_branco, numero_jogador, game_status):
         return game_status
 
 
-# def multi_player():
-    # numero_de_vidas = []  # array for two player vidas for player 1
-    # numero_de_vidas2 = []  # array for two player vidas for player 2
+#def multi_player():
+    #numero_de_vidas = []  # array for two player vidas for player 1
+    #numero_de_vidas2 = []  # array for two player vidas for player 2
     #numero_de_vidas3 = []
 
 
 def main():
 
-    if len(lista_jogadores) == 3:  # CAMINHO PARA TRÊS JOGADORES SIMULTÂNEOS
+    if len(lista_jogadores) == 3: # CAMINHO PARA TRÊS JOGADORES SIMULTÂNEOS
 
         # ESCOLHA DA PALAVRA DA CATEGORIA TECH DIFICIEIS
         palavra1 = escolhe_palavras(messages.tech_dificeis)
@@ -467,7 +467,7 @@ def main():
         print(em_brancos2)
         print(em_brancos3)
 
-    if len(lista_jogadores) == 2:  # CAMINHO PARA DOIS JOGADORES SIMULTÂNEOS
+    if len(lista_jogadores) == 2: # CAMINHO PARA DOIS JOGADORES SIMULTÂNEOS
 
         auxiliar_1 = escolhe_palavras(messages.tech_dificeis)
         palavra1 = auxiliar_1.lower()
