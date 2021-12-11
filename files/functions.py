@@ -242,6 +242,34 @@ def imprime_mensagem_perdedor(palavra_secreta):
     print(images.game_over)
 
 
+
+
+def reinicia_jogo ():
+    
+    print('''
+        Deseja jogar novamente?
+
+        [S] Sim  [N] Não
+
+        ''')
+
+    reiniciar = True
+
+    while reiniciar:
+                
+        reinicia_jogo = input('Digite a opção escolhida: ')
+
+        if reinicia_jogo == 'S'.upper():
+            print('vamos jogar de novo')
+            jogar()  #ideal seria reiniciar chamando a função numero_jogadores mas da erro.
+
+
+            reiniciar = False        
+        elif reinicia_jogo == 'N'.upper():
+            print('Até Logo!')
+            exit()           
+
+
 def desenha_forca(erros):
 
     if(erros == 1):
@@ -323,6 +351,13 @@ def jogar():
         imprime_mensagem_perdedor(palavra_secreta)
 
     print("Fim do jogo")
+
+    # limpa_tela()
+
+    
+
+
+    reinicia_jogo()
 
 
 def jogar_2():
@@ -576,6 +611,34 @@ def main():
 
         print(em_brancos1)
         print(em_brancos2)
+        reinicia_multiplayer()
+
+def reinicia_multiplayer ():
+    
+    print('''
+        Deseja jogar novamente?
+
+        [S] Sim  [N] Não
+
+        ''')
+
+    reiniciar = True
+
+    while reiniciar:
+                
+        reinicia_jogo = input('Digite a opção escolhida: ')
+
+        if reinicia_jogo == 'S'.upper():
+            print('vamos jogar de novo')
+            numero_jogadores() # essa função deveria ser desmembrada pra ter a opção de colocar o nome dos jogadores novamente
+            jogar_2()             
+
+
+            reiniciar = False        
+        elif reinicia_jogo == 'N'.upper():
+            print('Até Logo!')
+            exit() 
+
 
 
 limpa_tela()
