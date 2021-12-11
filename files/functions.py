@@ -242,6 +242,7 @@ def imprime_mensagem_perdedor(palavra_secreta):
     print(images.game_over)
 
 
+<<<<<<< Updated upstream
 
 
 def reinicia_jogo ():
@@ -257,10 +258,18 @@ def reinicia_jogo ():
 
     while reiniciar:
                 
+=======
+def reinicia_jogo ():
+    reiniciar = False
+
+    while reiniciar == False:
+        
+>>>>>>> Stashed changes
         reinicia_jogo = input('Digite a opção escolhida: ')
 
         if reinicia_jogo == 'S'.upper():
             print('vamos jogar de novo')
+<<<<<<< Updated upstream
             jogar()  #ideal seria reiniciar chamando a função numero_jogadores mas da erro.
 
 
@@ -268,6 +277,22 @@ def reinicia_jogo ():
         elif reinicia_jogo == 'N'.upper():
             print('Até Logo!')
             exit()           
+=======
+            jogar()
+            resposta_sim = 's'
+            reiniciar == True
+            return resposta_sim
+
+        elif reinicia_jogo == 'N'.upper():
+            print('Até Logo!')
+            exit()           
+            
+
+        else:
+            print('OPÇÃO INVALIDA. DIGITE S OU N')
+            reiniciar == False
+
+>>>>>>> Stashed changes
 
 
 def desenha_forca(erros):
@@ -349,7 +374,10 @@ def jogar():
         imprime_mensagem_vencedor(palavra_secreta)
     else:
         imprime_mensagem_perdedor(palavra_secreta)
+    
+reinicia_jogo()
 
+<<<<<<< Updated upstream
     print("Fim do jogo")
 
     # limpa_tela()
@@ -360,6 +388,9 @@ def jogar():
     reinicia_jogo()
 
 
+=======
+    
+>>>>>>> Stashed changes
 def jogar_2():
     limpa_tela()
     print(images.multiplayer)
@@ -641,7 +672,9 @@ def reinicia_multiplayer ():
 
 
 
+
 limpa_tela()
 imprime_mensagem_abertura()
 numero_jogadores()
 modo_de_jogo()
+
