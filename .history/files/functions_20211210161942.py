@@ -202,24 +202,23 @@ def inicializa_letras_acertadas(palavra_secreta):
     return ["_" for letra in palavra_secreta]
 
 
-tentativas = []
-
-def letras_repetidas():
-    if pede_chute() == tentativas:
-        print('Você já digitou essa letra!!! ')
-        tentativas.append(pede_chute())
-         
-        return tentativas
-
-
-
-
 def pede_chute():
     formatting.forma_linha()
     chute = input("Qual seu palpite sobre uma letra? ")
     formatting.forma_linha()
     chute = chute.strip().upper()
     return chute
+
+letras_digitadas = []
+
+def letras_repetidas(chute):
+    while chute in chute:
+        print('Você escolheu uma letra que já tinha tentado, escolha outra')
+        letras_digitadas.append(chute)
+        pede_chute()
+        print('As letras que você já digitou foram: ')
+        print(letras_digitadas)
+
 
 
 def marca_chute_correto(chute, letras_acertadas, palavra_secreta):
@@ -320,6 +319,7 @@ def jogar():
         acertou = "_" not in letras_acertadas
 
         print(letras_acertadas)
+        print(letras_repetidas(chute))
 
     if (acertou):
         imprime_mensagem_vencedor(palavra_secreta)

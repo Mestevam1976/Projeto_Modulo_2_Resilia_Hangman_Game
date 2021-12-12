@@ -206,10 +206,9 @@ tentativas = []
 
 def letras_repetidas():
     if pede_chute() == tentativas:
-        print('Você já digitou essa letra!!! ')
-        tentativas.append(pede_chute())
-         
-        return tentativas
+
+    
+        retunr
 
 
 
