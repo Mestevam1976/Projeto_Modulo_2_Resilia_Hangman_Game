@@ -1,10 +1,9 @@
-<<<<<<< Updated upstream
-=======
+
 geral_faceis = [
     'teste', 'gelo', 'dado', 'faca', 'mula', 'mola', 'terra', 'corda', 'carro'
 ]
 
-<<<<<<< Updated upstream
+
 geral_medianas = [
     'palavra', 'tesouro', 'caseiro', 'cenoura', 'pessego', 'duvidar', 'petroleo', 'revirado'
 ]
@@ -17,7 +16,8 @@ categoria_geral = [geral_faceis, geral_medianas, geral_faceis]
 
 tech_faceis = [
     'byte', 'bit', 'git', 'put', 'add'
-=======
+
+]
 
 categoria_geral = [geral_faceis, geral_medianas, geral_faceis]
 
@@ -141,7 +141,7 @@ geral_dificeis = [ # 56 palavras de 14 letras cada
     'intransigencia', 'relacionamento', 'inconsistencia', 'aplicabilidade', 'imparcialidade', 'despretensioso', 'desprendimento',
     'impessoalidade', 'personificaçao', 'procrastinador', 'prestatividade', 'socioambiental', 'congratulaçoes', 'licenciosidade', 
     'exequibilidade', 'inconveniencia', 'pusilanimidade', 'transcendencia', 'excentricidade', 'insubstituivel', 'credenciamento'
->>>>>>> Stashed changes
+
 ]
 
 tech_medianas = [
@@ -153,4 +153,4 @@ tech_dificeis = [
 ]
 
 categoria_tech = [tech_faceis, tech_medianas, tech_dificeis]
->>>>>>> Stashed changes
+
