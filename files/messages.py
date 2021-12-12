@@ -5,6 +5,7 @@ geral_faceis = [
 ]
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 geral_medianas = [
     'palavra', 'tesouro', 'caseiro', 'cenoura', 'pessego', 'duvidar', 'petroleo', 'revirado'
 ]
@@ -13,6 +14,8 @@ geral_medianas = [
 geral_dificeis = [
     'paralelepipedo', 'empoderamento', 'delineamento', 'caleidoscopio', 'polinesio', 'polifonico',
 =======
+=======
+>>>>>>> Stashed changes
 geral_dificeis = [ # 56 palavras de 14 letras cada
     'imprescindivel', 'condescendente', 'caracteristica','idiossincrasia', 'extraordinario', 'concupiscencia', 'demasiadamente',
     'consubstanciar', 'intercorrencia', 'irrepreensivel', 'incomensuravel', 'preponderancia', 'arbitrariedade', 'especificidade',
@@ -22,6 +25,9 @@ geral_dificeis = [ # 56 palavras de 14 letras cada
     'intransigencia', 'relacionamento', 'inconsistencia', 'aplicabilidade', 'imparcialidade', 'despretensioso', 'desprendimento',
     'impessoalidade', 'personificaçao', 'procrastinador', 'prestatividade', 'socioambiental', 'congratulaçoes', 'licenciosidade', 
     'exequibilidade', 'inconveniencia', 'pusilanimidade', 'transcendencia', 'excentricidade', 'insubstituivel', 'credenciamento'
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 ]
 
@@ -62,9 +68,12 @@ tech_dicionario = {
 '\ninspiradas na estrutura do cérebro humano.',
 }
 
+<<<<<<< Updated upstream
 
 
 
+=======
+>>>>>>> Stashed changes
 geral_dificeis_dicionario = {
 'imprescindivel': 'DICA: Que não se pode dispensar nem renunciar; que é extremamente necessário ou essencial para; indispensável, essencial.', 
 'condescendente': 'DICA: Qualidade da pessoa que é incapaz de se impor, que aceita os sentimentos ou os desejos de alguém; permissivo. ', 
@@ -122,9 +131,12 @@ geral_dificeis_dicionario = {
 'insubstituivel': 'DICA: Qualidade de quem é excepcional, incomparável ou superior.', 
 'credenciamento': 'DICA: Concessão de procuração para representar algo ou alguém em procedimentos burocráticos. '
 }
+<<<<<<< Updated upstream
 
 
 
 
 
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
