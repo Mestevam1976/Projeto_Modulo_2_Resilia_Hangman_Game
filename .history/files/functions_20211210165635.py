@@ -209,7 +209,7 @@ def letras_repetidas():
         print('Você já digitou essa letra!!! ')
         tentativas.append(pede_chute())
          
-        return tentativas
+        return
 
 
 

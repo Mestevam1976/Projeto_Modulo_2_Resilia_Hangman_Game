@@ -202,14 +202,10 @@ def inicializa_letras_acertadas(palavra_secreta):
     return ["_" for letra in palavra_secreta]
 
 
-tentativas = []
+letra
 
 def letras_repetidas():
-    if pede_chute() == tentativas:
-        print('Você já digitou essa letra!!! ')
-        tentativas.append(pede_chute())
-         
-        return tentativas
+    for i in 
 
 
 
