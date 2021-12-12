@@ -1,0 +1,10 @@
+__pycache__
+*.pyc
+.temp
+.doc
+.git
+.tmp
+.temp
+.history
+\arquivos_teste 
+\Backup_
