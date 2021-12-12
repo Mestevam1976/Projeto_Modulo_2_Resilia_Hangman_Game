@@ -7,9 +7,17 @@ geral_medianas = [
     'palavra', 'tesouro', 'caseiro', 'cenoura', 'pessego', 'duvidar', 'petroleo', 'revirado'
 ]
 
-geral_dificeis = {
-    'paralelepipedo': '-dica: calçamento de rua', #'empoderamento', 'delineamento', 'caleidoscopio', 'polinesio', 'polifonico',
-}
+geral_dificeis = [ # 56 palavras de 14 letras cada
+    'imprescindivel', 'condescendente', 'caracteristica','idiossincrasia', 'extraordinario', 'concupiscencia', 'demasiadamente',
+    'consubstanciar', 'intercorrencia', 'irrepreensivel', 'incomensuravel', 'preponderancia', 'arbitrariedade', 'especificidade',
+    'discricionario', 'posteriormente', 'imprescritivel', 'empreendimento', 'intransponivel', 'revolucionario', 'contextualizar',
+    'atenciosamente', 'superveniencia', 'entretenimento', 'periodicamente', 'infraestrutura', 'paulatinamente', 'transcendental', 
+    'democratizaçao', 'ancestralidade', 'diligentemente', 'espontaneidade', 'insignificante', 'reconhecimento', 'arrependimento',
+    'intransigencia', 'relacionamento', 'inconsistencia', 'aplicabilidade', 'imparcialidade', 'despretensioso', 'desprendimento',
+    'impessoalidade', 'personificaçao', 'procrastinador', 'prestatividade', 'socioambiental', 'congratulaçoes', 'licenciosidade', 
+    'exequibilidade', 'inconveniencia', 'pusilanimidade', 'transcendencia', 'excentricidade', 'insubstituivel', 'credenciamento'
+]
+
 
 categoria_geral = [geral_faceis, geral_medianas, geral_faceis]
 
@@ -127,7 +135,7 @@ geral_dicionario = {
 'xifopago' : 'DICA: gêmeo siamês : Gêmeo unido ao irmão por alguma parte do corpo.',
 'empoderamento' : 'DICA : fortalecer : Ação de se tornar poderoso, de passar a possuir poder, autoridade, domínio sobre: processo de empoderamento das classes desfavorecidas.',
 }
-=
+
 geral_faceis = [ # 60 palavras de 6 letras cada
     'teste', 'apice', 'animo', 'comum', 'graca', 'graxa', 'terra', 'corda', 'carro', 'visor', 'tampa', 'vidro', 
     'barra', 'ganso', 'manso', 'senso', 'algoz', 'nobre', 'exito', 'sagaz', 'inato', 'ideia', 'honra', 'poder',
@@ -345,10 +353,6 @@ tech_dificeis = [
 ]
 
 categoria_tech = [tech_faceis, tech_medianas, tech_dificeis]
-
-
-]
-
 
 
 geral_dificeis_dicionario = {
