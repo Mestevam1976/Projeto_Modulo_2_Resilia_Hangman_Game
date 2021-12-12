@@ -1,7 +1,3 @@
-<<<<<<< Updated upstream
-def teste():
-    print('teste')
-=======
 import random
 import messages
 import images
@@ -597,4 +593,3 @@ limpa_tela()
 imprime_mensagem_abertura()
 numero_jogadores()
 modo_de_jogo()
->>>>>>> Stashed changes
