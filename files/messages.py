@@ -16,6 +16,16 @@ geral_medianas = [ # 63 palavras de 8 letras cada
     'metodico', 'consiste', 'distinto', 'abnegado', 'criterio', 'desfecho', 'sucumbir', 'historia', 'elegivel',
 ]
 
+<<<<<<< Updated upstream
+=======
+<<<<<<< Updated upstream
+geral_medianas = [
+    'palavra', 'tesouro', 'caseiro', 'cenoura', 'pessego', 'duvidar', 'petroleo', 'revirado'
+]
+
+
+
+>>>>>>> Stashed changes
 geral_dificeis = [
     'paralelepipedo', 'empoderamento', 'delineamento', 'caleidoscopio', 'polinesio', 'polifonico',
 ]
