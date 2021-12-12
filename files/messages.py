@@ -135,9 +135,7 @@ geral_dicionario = {
 'xifopago' : 'DICA: gêmeo siamês : Gêmeo unido ao irmão por alguma parte do corpo.',
 'empoderamento' : 'DICA : fortalecer : Ação de se tornar poderoso, de passar a possuir poder, autoridade, domínio sobre: processo de empoderamento das classes desfavorecidas.',
 }
-<<<<<<< HEAD
-=======
-=
+
 geral_faceis = [ # 60 palavras de 6 letras cada
     'teste', 'apice', 'animo', 'comum', 'graca', 'graxa', 'terra', 'corda', 'carro', 'visor', 'tampa', 'vidro', 
     'barra', 'ganso', 'manso', 'senso', 'algoz', 'nobre', 'exito', 'sagaz', 'inato', 'ideia', 'honra', 'poder',
@@ -357,10 +355,6 @@ tech_dificeis = [
 categoria_tech = [tech_faceis, tech_medianas, tech_dificeis]
 
 
-]
-
-
-
 geral_dificeis_dicionario = {
 'imprescindivel': 'DICA: Que não se pode dispensar nem renunciar; que é extremamente necessário ou essencial para; indispensável, essencial.', 
 'condescendente': 'DICA: Qualidade da pessoa que é incapaz de se impor, que aceita os sentimentos ou os desejos de alguém; permissivo. ', 
@@ -419,4 +413,3 @@ geral_dificeis_dicionario = {
 'credenciamento': 'DICA: Concessão de procuração para representar algo ou alguém em procedimentos burocráticos. '
 }
 
->>>>>>> 47c805905477f9d54ad376f65aaac34bae96a8d2
