@@ -14,7 +14,7 @@ def limpa_tela():  # Limpa a tela removendo do prompt as informações sobre a l
         _ = system('clear')
 
 
-def escolhe_palavras(lista):
+def escolhe_palavras(lista):  # PARA AMBOS OS MODOS DE JOGO
 
     # Função Random e método choice - escolhe algo específico, no caso a lista
     palavra = random.choice(lista)
@@ -32,6 +32,8 @@ dica = ' '
 palavra_secreta = ' '
 saida = ' '
 lista_jogadores = []
+letras_digitadas = []
+tentativas = []
 
 
 def numero_jogadores():  # Função que estabelece a quantidade de jogadores (singleplayer ou multiplayer)
@@ -75,7 +77,7 @@ def numero_jogadores():  # Função que estabelece a quantidade de jogadores (si
             correto = False
 
 
-def modo_de_jogo():
+def modo_de_jogo():  # SELETOR DE MODO SINGLEPLAYER OU MULTIPLAYER
     if len(lista_jogadores) == 1:
         modo_jogo = 'SINGLE PLAYER'
         jogar()  # Fase com definição das dificuldades
@@ -85,7 +87,7 @@ def modo_de_jogo():
         jogar_2()  # Fase direta com dificuldade única
 
 
-def escolha_tema():  # Função para selecionar o tema específico, localizado no arquivo messages.py
+def escolha_tema():  # PARA O MODO SINGLEPLAYER
     formatting.forma_linha()
     opcao_tema = False  # condição inicial que dá start ao loop do comando while
 
@@ -117,7 +119,7 @@ Digite a ou b: ''')
             opcao_tema = False
 
 
-def escolha_nivel():  # Seletor do nível de dificuldade: fácil, mediano ou difícil
+def escolha_nivel():  # PARA O MODO SINGLEPLAYER
 
     opcao_nivel = False
 
@@ -154,7 +156,7 @@ Digite a, b ou c: ''')
             opcao_nivel = False
 
 
-def caminho():
+def caminho():  # PARA AMBOS OS MODOS DE JOGO
     if sum(indice_tema) == 0:
         if sum(indice_nivel) == 0:
             palavra_secreta = escolhe_palavras(messages.categoria_geral[0])
@@ -192,36 +194,40 @@ def caminho():
                 return saida
 
 
-def imprime_mensagem_abertura():
+def imprime_mensagem_abertura():  # PARA O INÍCIO DO JOGO E LOOP DO SINGLEPLAYER
     print(images.bem_vindo)
     formatting.forma_linha()
 
 
 def inicializa_letras_acertadas(palavra_secreta):
+
     formatting.forma_linha()
     return ["_" for letra in palavra_secreta]
 
 
-tentativas = []
+def letras_repetidas():  # APENAS PARA O JOGO SINGLEPLAYER
 
-def letras_repetidas():
     if pede_chute() == tentativas:
         print('Você já digitou essa letra!!! ')
         tentativas.append(pede_chute())
-         
+
         return tentativas
 
 
-
-
-def pede_chute():
+def pede_chute():  # APENAS PARA O JOGO SINGLEPLAYER
     formatting.forma_linha()
     chute = input("Qual seu palpite sobre uma letra? ")
     formatting.forma_linha()
     chute = chute.strip().upper()
+
+    letras_digitadas.append(chute)
+    print("As letras que você já tentou são:")
+    print(letras_digitadas)
+
     return chute
 
 
+# APENAS PARA O MODO SINGLEPLAYER
 def marca_chute_correto(chute, letras_acertadas, palavra_secreta):
     index = 0
     for letra in palavra_secreta:
@@ -230,6 +236,7 @@ def marca_chute_correto(chute, letras_acertadas, palavra_secreta):
         index += 1
 
 
+# APENAS PARA O JOGO SINGLEPLAYER
 def imprime_mensagem_vencedor(palavra_secreta):
     print(formatting.escolher_cor(
         'green', f"Parabéns {lista_jogadores[0].upper()} você ganhou!"))
@@ -237,6 +244,7 @@ def imprime_mensagem_vencedor(palavra_secreta):
     print(images.vencedor_02)
 
 
+# APENAS PARA O JOGO SINGLEPLAYER
 def imprime_mensagem_perdedor(palavra_secreta):
     print()
     print(formatting.escolher_cor(
@@ -246,7 +254,71 @@ def imprime_mensagem_perdedor(palavra_secreta):
     print(images.game_over)
 
 
-def desenha_forca(erros):
+def reinicia_jogo():  # PARA O JOGO MODO SINGLEPLAYER
+
+    reiniciar = False
+
+    while reiniciar == False:
+        formatting.forma_linha()
+        texto = '''
+Deseja jogar novamente??
+Em caso positivo, digite S para continuar ou N para sair: '''
+        reinicia_jogo = input(formatting.escolher_cor('yellow', texto))
+
+        if reinicia_jogo == 's'or reinicia_jogo == 'S':
+            print('vamos jogar de novo')
+            resposta_sim = 's'
+            reiniciar == True
+            letras_digitadas.clear()
+            tentativas.clear()
+            indice_tema.clear()
+            indice_nivel.clear()
+
+            jogar()
+            return resposta_sim
+
+        elif reinicia_jogo == 'n'or reinicia_jogo == 'N':
+            print('Até Logo!')
+            exit()
+
+        else:
+            print('OPÇÃO INVALIDA. DIGITE S OU N')
+            reiniciar == False
+
+
+def reinicia_jogo_2():  # PARA O JOGO MODO MULTIPLAYER
+
+    reiniciar = False
+
+    while reiniciar == False:
+        formatting.forma_linha()
+        texto = '''
+Deseja jogar novamente??
+Em caso positivo, digite S para continuar ou N para sair: '''
+        reinicia_jogo = input(formatting.escolher_cor('yellow', texto))
+
+        if reinicia_jogo == 's'or reinicia_jogo == 'S' :
+            print('vamos jogar de novo')
+            resposta_sim = 's'
+            reiniciar == True
+            letras_digitadas.clear()
+            tentativas.clear()
+            indice_tema.clear()
+            indice_nivel.clear()
+
+            jogar_2()
+            return resposta_sim
+
+        elif reinicia_jogo == 'n'or reinicia_jogo == 'N':
+            print('Até Logo!')
+            exit()
+
+        else:
+            print('OPÇÃO INVALIDA. DIGITE S OU N')
+            reiniciar == False
+
+
+def desenha_forca(erros):  # PARA AMBOS OS MODOS DE JOGO
 
     if(erros == 1):
         print(formatting.escolher_cor('yellow', images.forca[0]))
@@ -272,19 +344,14 @@ def desenha_forca(erros):
     print()
 
 
-def jogar():
-
-    indice_nivel = []
-    indice_tema = []
-
+def jogar():  # PARA O MODO SINGLEPLAYER
+    palavra_secreta = ' '
+    letras_acertadas = ' '
     limpa_tela()
-
     escolha_tema()
-    # print(indice_tema)
     limpa_tela()
     formatting.forma_linha()
     escolha_nivel()
-    # print(indice_nivel)
     limpa_tela()
     palavra_secreta = caminho()
 
@@ -328,20 +395,23 @@ def jogar():
 
     print("Fim do jogo")
 
+    reinicia_jogo()
 
-def jogar_2():
+
+def jogar_2():  # PARA O MODO MULTIPLAYER
     limpa_tela()
     print(images.multiplayer)
     formatting.forma_linha()
     main()
 
 
-def seleciona_letras(segredo, palavra_em_branco, numero_de_vidas):  # original seleciona_letras
+def seleciona_letras(segredo, palavra_em_branco, numero_de_vidas):  # PARA O MODO SINGLEPLAYER
 
     # Para assegurar a funcionalidade do código caso os usuários digitem números ou caracteres especiais
     somente_letra = False
 
     while somente_letra == False:
+        formatting.forma_linha()
         letra_advinhada = input(
             "Por favor, informe seu palpite, digite somente uma letra: ")
 
@@ -356,7 +426,7 @@ def seleciona_letras(segredo, palavra_em_branco, numero_de_vidas):  # original s
 
             numero_de_vidas = valida_vidas(sinaliza_vidas, numero_de_vidas)
 
-            print(numero_de_vidas)
+            print(f'O número de vidas perdidas é: {numero_de_vidas}')
 
             return palavra_em_branco, numero_de_vidas
         else:
@@ -369,7 +439,7 @@ def seleciona_letras(segredo, palavra_em_branco, numero_de_vidas):  # original s
             formatting.forma_linha()
 
 
-def valida_vidas(sinaliza_vidas, vidas):
+def valida_vidas(sinaliza_vidas, vidas):  # PARA O MODO MULTIPLAYER
 
     if sinaliza_vidas > 0:  # Aqui checará se sinaliza_vidas é maior que 0, sendo, o jogador respondeu corretamente
 
@@ -381,7 +451,7 @@ def valida_vidas(sinaliza_vidas, vidas):
     else:
         # Já se o contador sinaliza_vidas for menor que 0, indicará que o jogador errou a letra e então adicionará o erro:
         vidas.append("1")  # aqui
-
+        formatting.forma_linha()
         print(f"Oh oh! Você perdeu {len(vidas)} vida(s)...")
 
         # limpa_tela()
@@ -411,11 +481,11 @@ def valida_vidas(sinaliza_vidas, vidas):
         return vidas
 
 
-def check_win(vidas, em_branco, numero_jogador, game_status):
+def check_win(vidas, em_branco, numero_jogador, game_status):  # PARA O MODO MULTIPLAYER
     print(numero_jogador)
     print(f'Checa acertos: {em_branco} ')
     print()
-    print()
+    print('PRÓXIMO JOGADOR FAÇA SUA JOGADA: ')
 
     contador_espacos = 0
 
@@ -446,14 +516,20 @@ def check_win(vidas, em_branco, numero_jogador, game_status):
         return game_status
 
 
-def main():
+def main():  # PARA O MODO MULTIPLAYER
 
     if len(lista_jogadores) == 3:  # CAMINHO PARA TRÊS JOGADORES SIMULTÂNEOS
 
         # ESCOLHA DA PALAVRA DA CATEGORIA TECH DIFICIEIS
-        palavra1 = escolhe_palavras(messages.tech_dificeis)
-        palavra2 = escolhe_palavras(messages.tech_dificeis)
-        palavra3 = escolhe_palavras(messages.tech_dificeis)
+
+        auxiliar_1 = escolhe_palavras(messages.tech_medianas)
+        palavra1 = auxiliar_1.lower()
+
+        auxiliar_2 = escolhe_palavras(messages.tech_medianas)
+        palavra2 = auxiliar_2.lower()
+
+        auxiliar_3 = escolhe_palavras(messages.tech_medianas)
+        palavra3 = auxiliar_3.lower()
 
         em_brancos1 = list(palavra1)
         em_brancos2 = list(palavra2)
@@ -467,111 +543,71 @@ def main():
 
         for i in range(len(em_brancos1)):
             em_brancos1[i] = "_"
-        print(f"{lista_jogadores[0]}: Você terá que tentar advinhar a seguinte palavra. Digite somente uma letra por vez: ",
-              em_brancos1)
-        print(formatting.forma_linha())
+        formatting.forma_linha()
+        print(
+            f"{formatting.escolher_cor('blue', lista_jogadores[0].upper())}: Você terá que tentar advinhar a seguinte palavra. \nDigite somente uma letra por vez: \n", "\n", em_brancos1, '\n')
+        print()
+
+        formatting.forma_linha()
 
         for i in range(len(em_brancos2)):
             em_brancos2[i] = "_"
+        formatting.forma_linha()
         print(
-            f"{lista_jogadores[1]}: Você terá que tentar advinhar a seguinte palavra. Digite somente uma letra por vez: ", em_brancos2)
+            f"{formatting.escolher_cor('green',lista_jogadores[1].upper())}: Você terá que tentar advinhar a seguinte palavra. \nDigite somente uma letra por vez: \n", "\n", em_brancos2, '\n')
+        print()
+
+        formatting.forma_linha()
 
         for i in range(len(em_brancos3)):
             em_brancos3[i] = "_"
+        formatting.forma_linha()
         print(
-            f"{lista_jogadores[2]}: Você terá que tentar advinhar a seguinte palavra. Digite somente uma letra por vez: ", em_brancos3)
-
-        while len(numero_de_vidas) < 7 and len(numero_de_vidas2) < 7 and len(numero_de_vidas3) < 7 and game_over == False:
-            player = 1
-            em_brancos1, numero_de_vidas = seleciona_letras(
-                palavra1, em_brancos1, numero_de_vidas)
-            game_over = check_win(
-                numero_de_vidas, em_brancos1, player, game_over)
-
-            player = 2
-            em_brancos2, numero_de_vidas2 = seleciona_letras(
-                palavra2, em_brancos2, numero_de_vidas2)
-            game_over = check_win(
-                numero_de_vidas2, em_brancos2, player, game_over)
-
-            player = 3
-            em_brancos3, numero_de_vidas = seleciona_letras(
-                palavra3, em_brancos3, numero_de_vidas3)
-            game_over = check_win(
-                numero_de_vidas3, em_brancos3, player, game_over)
-
-        if numero_de_vidas > numero_de_vidas2 or numero_de_vidas > numero_de_vidas3:  # Refazer lógica de saída
-            print("Player 2 win")
-        elif numero_de_vidas2 > numero_de_vidas or numero_de_vidas2 > numero_de_vidas3:
-            print("Player 1 win")
-        elif numero_de_vidas3 > numero_de_vidas:
-            print("Player 1 win")
-        elif numero_de_vidas3 > numero_de_vidas2:
-            print("Player 1 win")
-
-        else:
-            print("Tie")
-
-        print(em_brancos1)
-        print(em_brancos2)
-        print(em_brancos3)
-
-    if len(lista_jogadores) == 2:  # CAMINHO PARA DOIS JOGADORES SIMULTÂNEOS
-
-        auxiliar_1 = escolhe_palavras(messages.tech_dificeis)
-        palavra1 = auxiliar_1.lower()
-
-        auxiliar_2 = escolhe_palavras(messages.tech_dificeis)
-        palavra2 = auxiliar_2.lower()
-
-        em_brancos1 = list(palavra1)
-        # print(em_brancos1)
-        em_brancos2 = list(palavra2)
-
-        numero_de_vidas = []  # lista para registrar as vidas perdidas do jogador 1
-        numero_de_vidas2 = []  # lista para registrar as vidas perdidas do jogador 2
-
-        game_over = False
-
-        for i in range(len(em_brancos1)):
-
-            em_brancos1[i] = "_"
-        print(
-            f"{lista_jogadores[0]}: Você terá que tentar advinhar a seguinte palavra. \nDigite somente uma letra por vez: \n", "\n", em_brancos1, '\n')
+            f"{formatting.escolher_cor('yellow',lista_jogadores[2].upper())}: Você terá que tentar advinhar a seguinte palavra. \nDigite somente uma letra por vez: \n", "\n", em_brancos2, '\n')
         print()
-        # print(messages.tech_dicionario[palavra1])
-        print(formatting.forma_linha())
 
-        # print em_brancos2
-        for i in range(len(em_brancos2)):
-            em_brancos2[i] = "_"
-        print(
-            f"{lista_jogadores[1]}: Você terá que tentar advinhar a seguinte palavra. \nDigite somente uma letra por vez: \n", "\n", em_brancos2, '\n')
-        print()
-        print(formatting.forma_linha())
+        formatting.forma_linha()
 
         while len(numero_de_vidas) < 7 and len(numero_de_vidas2) < 7 and game_over == False:
-            player = lista_jogadores[0]
+            player = lista_jogadores[0].upper()
             em_brancos1, numero_de_vidas = seleciona_letras(
                 palavra1, em_brancos1, numero_de_vidas)
             game_over = check_win(
-                numero_de_vidas, em_brancos1, player, game_over)
+                numero_de_vidas, em_brancos1, formatting.escolher_cor('blue', player), game_over)
 
-            player = lista_jogadores[1]
+            player = lista_jogadores[1].upper()
             em_brancos2, numero_de_vidas2 = seleciona_letras(
                 palavra2, em_brancos2, numero_de_vidas2)
             game_over = check_win(
-                numero_de_vidas2, em_brancos2, player, game_over)
+                numero_de_vidas2, em_brancos2, formatting.escolher_cor('green', player), game_over)
 
-        if numero_de_vidas > numero_de_vidas2:
+            player = lista_jogadores[2].upper()
+            em_brancos3, numero_de_vidas3 = seleciona_letras(
+                palavra3, em_brancos3, numero_de_vidas3)
+            game_over = check_win(
+                numero_de_vidas3, em_brancos3, formatting.escolher_cor('yellow', player), game_over)
+
+        if numero_de_vidas > numero_de_vidas2 and numero_de_vidas3 > numero_de_vidas2:
             limpa_tela()
-            print(f"{lista_jogadores[1]} VOCÊ VENCEU!!!")
+            formatting.forma_linha()
+            print(
+                f"{formatting.escolher_cor('green', lista_jogadores[1].upper())} VOCÊ VENCEU!!!")
             print(images.vencedor_02)
             game_over = True
 
-        elif numero_de_vidas2 > numero_de_vidas:
+        elif numero_de_vidas2 > numero_de_vidas and numero_de_vidas3 > numero_de_vidas:
             limpa_tela()
-            print(f"{lista_jogadores[0]} VOCÊ VENCEU!!!")
+            formatting.forma_linha()
+            print(
+                f"{formatting.escolher_cor('blue',lista_jogadores[0].upper())} VOCÊ VENCEU!!!")
+            print(images.vencedor_02)
+            game_over = True
+
+        elif numero_de_vidas2 > numero_de_vidas3 and numero_de_vidas > numero_de_vidas3:
+            limpa_tela()
+            formatting.forma_linha()
+            print(
+                f"{formatting.escolher_cor('blue',lista_jogadores[2].upper())} VOCÊ VENCEU!!!")
             print(images.vencedor_02)
             game_over = True
 
@@ -580,6 +616,83 @@ def main():
 
         print(em_brancos1)
         print(em_brancos2)
+        print(em_brancos3)
+
+        reinicia_jogo_2()
+
+    if len(lista_jogadores) == 2:  # CAMINHO PARA DOIS JOGADORES SIMULTÂNEOS
+
+        # ESCOLHA DA PALAVRA DA CATEGORIA TECH DIFICIEIS
+
+        auxiliar_1 = escolhe_palavras(messages.tech_medianas)
+        palavra1 = auxiliar_1.lower()
+
+        auxiliar_2 = escolhe_palavras(messages.tech_medianas)
+        palavra2 = auxiliar_2.lower()
+
+        numero_de_vidas = []  # lista para registrar as vidas perdidas do jogador 1
+        numero_de_vidas2 = []  # lista para registrar as vidas perdidas do jogador 2
+
+        em_brancos1 = list(palavra1)
+        em_brancos2 = list(palavra2)
+
+        numero_de_vidas = []  # LISTA VAZIA PARA ARMAZENAR VIDAS DO JOGADOR 1
+        numero_de_vidas2 = []  # LISTA VAZIA PARA ARMAZENAR VIDAS DO JOGADOR 2
+
+        game_over = False
+
+        for i in range(len(em_brancos1)):
+            em_brancos1[i] = "_"
+        formatting.forma_linha()
+        print(
+            f"{formatting.escolher_cor('blue', lista_jogadores[0].upper())}: Você terá que tentar advinhar a seguinte palavra. \nDigite somente uma letra por vez: \n", "\n", em_brancos1, '\n')
+        print()
+
+        formatting.forma_linha()
+
+        for i in range(len(em_brancos2)):
+            em_brancos2[i] = "_"
+        formatting.forma_linha()
+        print(
+            f"{formatting.escolher_cor('green',lista_jogadores[1].upper())}: Você terá que tentar advinhar a seguinte palavra. \nDigite somente uma letra por vez: \n", "\n", em_brancos2, '\n')
+        print()
+        formatting.forma_linha()
+
+        while len(numero_de_vidas) < 7 and len(numero_de_vidas2) < 7 and game_over == False:
+            player = lista_jogadores[0].upper()
+            em_brancos1, numero_de_vidas = seleciona_letras(
+                palavra1, em_brancos1, numero_de_vidas)
+            game_over = check_win(
+                numero_de_vidas, em_brancos1, formatting.escolher_cor('blue', player), game_over)
+
+            player = lista_jogadores[1].upper()
+            em_brancos2, numero_de_vidas2 = seleciona_letras(
+                palavra2, em_brancos2, numero_de_vidas2)
+            game_over = check_win(
+                numero_de_vidas2, em_brancos2, formatting.escolher_cor('green', player), game_over)
+
+        if numero_de_vidas > numero_de_vidas2:
+            limpa_tela()
+            formatting.forma_linha()
+            print(
+                f"{formatting.escolher_cor('green', lista_jogadores[1].upper())} VOCÊ VENCEU!!!")
+            print(images.vencedor_02)
+            game_over = True
+
+        elif numero_de_vidas2 > numero_de_vidas:
+            limpa_tela()
+            formatting.forma_linha()
+            print(
+                f"{formatting.escolher_cor('blue',lista_jogadores[0].upper())} VOCÊ VENCEU!!!")
+            print(images.vencedor_02)
+            game_over = True
+
+        else:
+            print("PARABÉNS AOS DOIS: DEU EMPATE!")
+
+        print(em_brancos1)
+        print(em_brancos2)
+        reinicia_jogo_2()
 
 
 limpa_tela()
