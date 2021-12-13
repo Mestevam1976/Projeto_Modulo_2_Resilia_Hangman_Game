@@ -1,35 +1,10 @@
-<<<<<<< Updated upstream
-geral_faceis = [ # 60 palavras de 6 letras cada
-    'teste', 'apice', 'animo', 'comum', 'graca', 'graxa', 'terra', 'corda', 'carro', 'visor', 'tampa', 'vidro', 
-=======
 ################################## CATEGORIA DE PALAVRAS DO TEMA GERAL #########################################################
 geral_faceis = [
     'teste', 'apice', 'animo', 'comum', 'graca', 'graxa', 'terra', 'corda', 'carro', 'visor', 'tampa', 'vidro',
->>>>>>> Stashed changes
     'barra', 'ganso', 'manso', 'senso', 'algoz', 'nobre', 'exito', 'sagaz', 'inato', 'ideia', 'honra', 'poder',
     'sutil', 'mutua', 'afeto', 'mexer', 'aquem', 'ardil', 'corja', 'prole', 'digno', 'crivo', 'culto', 'mundo',
     'brado', 'gleba', 'tenaz', 'regra', 'saude', 'viril', 'usura', 'clava', 'pifio', 'feliz', 'heroi', 'coisa',
     'plato', 'alibi', 'fluxo', 'senil', 'lugar', 'ligar', 'crise', 'grato', 'vital', 'valor', 'olhar', 'fator',
-<<<<<<< Updated upstream
-] 
-
-geral_medianas = [ # 63 palavras de 8 letras cada
-    'inerente', 'peculiar', 'denegrir', 'respeito', 'genocida', 'anuencia', 'deferido', 'prudente', 'equidade',
-    'pandemia', 'iminente', 'invasivo', 'essencia', 'desgraca', 'alienado', 'misogino', 'eminente', 'extensao',
-    'abstrato', 'empirico', 'premissa', 'conceito', 'ardiloso', 'reiterar', 'ascensao', 'passivel', 'prodigio',
-    'devaneio', 'talarico', 'lascivia', 'conserto', 'modestia', 'apologia', 'analogia', 'insercao', 'ativista',
-    'inospito', 'monotono', 'respaldo', 'remissao', 'sinonimo', 'mediocre', 'concerne', 'rapariga', 'despeito',
-    'gratidao', 'alicerce', 'retorica', 'destarte', 'rechacar', 'fomentar', 'proceder', 'demagogo', 'primazia',
-    'metodico', 'consiste', 'distinto', 'abnegado', 'criterio', 'desfecho', 'sucumbir', 'historia', 'elegivel',
-]
-
-geral_dificeis = [
-    'paralelepipedo', 'empoderamento', 'delineamento', 'caleidoscopio', 'polinesio', 'polifonico',
-]
-
-categoria_geral = [geral_faceis, geral_medianas, geral_faceis]
-
-=======
 ]
 
 geral_medianas = [
@@ -177,7 +152,6 @@ geral_medianas_dicionario = {
     'distinto': 'DICA: diferente : Que é diferente; sem semelhança; que não pode ser idêntico nem igual.',
     'abnegado': 'DICA: altruísta : Que renuncia as suas próprias vontades em função de uma outra pessoa; que não age por interesse; altruísta.',
     'criterio': 'DICA: discernimento : Capacidade para distinguir o verdadeiro do falso, o bom do ruim.',
->>>>>>> Stashed changes
 
 }
 
@@ -244,8 +218,6 @@ tech_faceis = ['float', 'dados', 'login', 'array', 'alias', 'chave', 'ascii', 'c
                'delay', 'query', 'valor', 'vetor', 'while',
                ]
 
-<<<<<<< Updated upstream
-=======
 tech_medianas = ['sensitive', 'atributos', 'agregacao', 'abstracao', 'variaveis', 'repeticao',
                  'algoritmo', 'protocolo', 'interface', 'parametro', 'benchmark'
 
@@ -311,4 +283,3 @@ tech_dicionario_faceis = {
     'vetor': 'DICA: é uma variável que armazena várias variáveis do mesmo tipo.',
     'while': 'DICA: é uma instrução de fluxo de controle que permite que o código seja executado repetidamente',
 }
->>>>>>> Stashed changes
