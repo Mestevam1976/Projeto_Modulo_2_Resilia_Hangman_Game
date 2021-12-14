@@ -32,8 +32,7 @@ dica = ' '
 palavra_secreta = ' '
 saida = ' '
 lista_jogadores = []
-letras_repetidas = []
-letras_digitadas = []
+let
 
 
 def numero_jogadores():  # Função que estabelece a quantidade de jogadores (singleplayer ou multiplayer)

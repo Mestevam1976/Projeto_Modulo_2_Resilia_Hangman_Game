@@ -32,8 +32,6 @@ dica = ' '
 palavra_secreta = ' '
 saida = ' '
 lista_jogadores = []
-letras_repetidas = []
-letras_digitadas = []
 
 
 def numero_jogadores():  # Função que estabelece a quantidade de jogadores (singleplayer ou multiplayer)
@@ -634,8 +632,11 @@ def main():
 
     if len(lista_jogadores) == 2:  # CAMINHO PARA DOIS JOGADORES SIMULTÂNEOS
 
+<<<<<<< Updated upstream
+=======
         # ESCOLHA DA PALAVRA DA CATEGORIA TECH DIFICIEIS
 
+>>>>>>> Stashed changes
         auxiliar_1 = escolhe_palavras(messages.tech_dificeis)
         palavra1 = auxiliar_1.lower()
 
@@ -655,9 +656,13 @@ def main():
 
             em_brancos1[i] = "_"
         print(
+<<<<<<< Updated upstream
+            f"{lista_jogadores[0]}: Você terá que tentar advinhar a seguinte palavra. \nDigite somente uma letra por vez: \n", "\n", em_brancos1, '\n')
+=======
             f"{formatting.escolher_cor('blue', lista_jogadores[0].upper())}: Você terá que tentar advinhar a seguinte palavra. \nDigite somente uma letra por vez: \n", "\n", em_brancos1, '\n')
         print(formatting.escolher_cor(
             'yellow', messages.tech_dicionario_dificeis[palavra1]))
+>>>>>>> Stashed changes
         print()
         # print(messages.tech_dicionario[palavra1])
         print(formatting.forma_linha())
@@ -666,9 +671,13 @@ def main():
         for i in range(len(em_brancos2)):
             em_brancos2[i] = "_"
         print(
+<<<<<<< Updated upstream
+            f"{lista_jogadores[1]}: Você terá que tentar advinhar a seguinte palavra. \nDigite somente uma letra por vez: \n", "\n", em_brancos2, '\n')
+=======
             f"{formatting.escolher_cor('green',lista_jogadores[1].upper())}: Você terá que tentar advinhar a seguinte palavra. \nDigite somente uma letra por vez: \n", "\n", em_brancos2, '\n')
         print(formatting.escolher_cor(
             'yellow', messages.tech_dicionario_dificeis[palavra2]))
+>>>>>>> Stashed changes
         print()
         print(formatting.forma_linha())
 
@@ -700,8 +709,19 @@ def main():
         else:
             print("PARABÉNS AOS DOIS: DEU EMPATE!")
 
+<<<<<<< Updated upstream
+        print(em_brancos1)
+        print(em_brancos2)
+
+
+limpa_tela()
+imprime_mensagem_abertura()
+numero_jogadores()
+modo_de_jogo()
+=======
         print(lista_jogadores[0], em_brancos1,
               'A palavra secreta era: ', palavra1)
         print(lista_jogadores[1], em_brancos2,
               'A palavra secreta era: ', palavra2)
         reinicia_jogo_2()
+>>>>>>> Stashed changes

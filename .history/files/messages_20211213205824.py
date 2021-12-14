@@ -1,6 +1,11 @@
+<<<<<<< Updated upstream
+geral_faceis = [ # 60 palavras de 6 letras cada
+    'teste', 'apice', 'animo', 'comum', 'graca', 'graxa', 'terra', 'corda', 'carro', 'visor', 'tampa', 'vidro', 
+=======
 ################################## CATEGORIA DE PALAVRAS DO TEMA GERAL #########################################################
 geral_faceis = [
     'teste', 'apice', 'animo', 'comum', 'graca', 'graxa', 'terra', 'corda', 'carro', 'visor', 'tampa', 'vidro',
+>>>>>>> Stashed changes
     'barra', 'ganso', 'manso', 'senso', 'algoz', 'nobre', 'exito', 'sagaz', 'inato', 'ideia', 'honra', 'poder',
     'sutil', 'mutua', 'afeto', 'mexer', 'aquem', 'ardil', 'corja', 'prole', 'digno', 'crivo', 'culto', 'mundo',
     'brado', 'gleba', 'tenaz', 'regra', 'saude', 'viril', 'usura', 'clava', 'pifio', 'feliz', 'heroi', 'coisa',
@@ -218,6 +223,8 @@ tech_faceis = ['float', 'dados', 'login', 'array', 'alias', 'chave', 'ascii', 'c
                'delay', 'query', 'valor', 'vetor', 'while',
                ]
 
+<<<<<<< Updated upstream
+=======
 tech_medianas = ['sensitive', 'atributos', 'agregacao', 'abstracao', 'variaveis', 'repeticao',
                  'algoritmo', 'protocolo', 'interface', 'parametro', 'benchmark'
 
@@ -283,3 +290,4 @@ tech_dicionario_faceis = {
     'vetor': 'DICA: é uma variável que armazena várias variáveis do mesmo tipo.',
     'while': 'DICA: é uma instrução de fluxo de controle que permite que o código seja executado repetidamente',
 }
+>>>>>>> Stashed changes

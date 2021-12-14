@@ -218,6 +218,8 @@ tech_faceis = ['float', 'dados', 'login', 'array', 'alias', 'chave', 'ascii', 'c
                'delay', 'query', 'valor', 'vetor', 'while',
                ]
 
+<<<<<<< Updated upstream
+=======
 tech_medianas = ['sensitive', 'atributos', 'agregacao', 'abstracao', 'variaveis', 'repeticao',
                  'algoritmo', 'protocolo', 'interface', 'parametro', 'benchmark'
 
@@ -283,3 +285,4 @@ tech_dicionario_faceis = {
     'vetor': 'DICA: é uma variável que armazena várias variáveis do mesmo tipo.',
     'while': 'DICA: é uma instrução de fluxo de controle que permite que o código seja executado repetidamente',
 }
+>>>>>>> Stashed changes
