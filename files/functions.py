@@ -2,6 +2,7 @@ import random
 import messages
 import images
 import formatting
+import time
 from os import system, name  # importa informações sobre o sistema operacional em uso
 
 
@@ -299,12 +300,18 @@ Em caso positivo, digite S para continuar ou N para sair: '''
             tentativas.clear()
             indice_tema.clear()
             indice_nivel.clear()
-
-            jogar()
+            lista_jogadores.clear()
+            limpa_tela()
+            imprime_mensagem_abertura()
+            numero_jogadores()
+            modo_de_jogo()
             return resposta_sim
 
         elif reinicia_jogo == 'n' or reinicia_jogo == 'N':
-            print('Até Logo!')
+            limpa_tela()
+            texto_colorido = formatting.escolher_cor('yellow', messages.texto)
+            impressao_lenta(texto_colorido, 0.01)
+            impressao_lenta('Até Logo!', 1)
             exit()
 
         else:
@@ -331,12 +338,18 @@ Em caso positivo, digite S para continuar ou N para sair: '''
             tentativas.clear()
             indice_tema.clear()
             indice_nivel.clear()
-
-            jogar_2()
+            lista_jogadores.clear()
+            limpa_tela()
+            imprime_mensagem_abertura()
+            numero_jogadores()
+            modo_de_jogo()
             return resposta_sim
 
         elif reinicia_jogo == 'n' or reinicia_jogo == 'N':
-            print('Até Logo!')
+            limpa_tela()
+            texto_colorido = formatting.escolher_cor('yellow', messages.texto)
+            impressao_lenta(texto_colorido, 0.01)
+            impressao_lenta('Até Logo!', 1)
             exit()
 
         else:
@@ -780,3 +793,10 @@ def main():  # PARA O MODO MULTIPLAYER
         formatting.forma_linha()
 
         reinicia_jogo_2()
+
+
+# FUNÇÃO PARA GERAR A EXIBIÇÃO LENTA DE CARACTERES
+def impressao_lenta(texto, atraso=0.2):
+    for caractere in texto:
+        print(caractere, end='', flush=True)
+        time.sleep(atraso)

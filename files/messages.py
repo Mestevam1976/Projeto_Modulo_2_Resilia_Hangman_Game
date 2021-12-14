@@ -303,3 +303,21 @@ tech_dicionario_faceis = {
     'vetor': 'DICA: é uma variável que armazena várias variáveis do mesmo tipo.',
     'while': 'DICA: é uma instrução de fluxo de controle que permite que o código seja executado repetidamente',
 }
+
+texto = '''
+############################### CRÉDITOS E AGRADECIMENTOS ####################################
+#                                                                                            #
+#      GOSTARÍAMOS DE AGRADECER A EQUIPE DO RESILIA PELA CONFIANÇA EM NÓS DEPOSITADA;        #
+#                                                                                            #
+#              ESSE PROJETO SÓ FOI POSSÍVEL GRAÇAS A ESSA EQUIPE FANTÁSTICA:                 #
+#                                                                                            #
+#                                    ANALU FRANCISCO                                         #
+#                                                                                            #
+#                                   CARLA LANZILLOTTA                                        #
+#                                                                                            #
+#                                   FERNANDA OLIVEIRA                                        #
+#                                                                                            #
+#                                MÁRCIO ESTEVAM DA SILVA                                     #
+#                                                                                            #
+##############################################################################################
+'''
