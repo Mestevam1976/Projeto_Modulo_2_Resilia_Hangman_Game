@@ -202,6 +202,26 @@ def imprime_mensagem_abertura():  # PARA O INÍCIO DO JOGO E LOOP DO SINGLEPLAYE
 def inicializa_letras_acertadas(palavra_secreta):
 
     formatting.forma_linha()
+    if sum(indice_tema) == 0 and sum(indice_nivel) == 0:
+        print(formatting.escolher_cor(
+            'yellow', messages.geral_faceis_dicionario[palavra_secreta.lower()]))
+    if sum(indice_tema) == 0 and sum(indice_nivel) == 1:
+        print(formatting.escolher_cor(
+            'yellow', messages.geral_medianas_dicionario[palavra_secreta.lower()]))
+    if sum(indice_tema) == 0 and sum(indice_nivel) == 2:
+        print(formatting.escolher_cor(
+            'yellow', messages.geral_dificeis_dicionario[palavra_secreta.lower()]))
+    if sum(indice_tema) == 1 and sum(indice_nivel) == 0:
+        print(formatting.escolher_cor(
+            'yellow', messages.tech_dicionario_faceis[palavra_secreta.lower()]))
+    if sum(indice_tema) == 1 and sum(indice_nivel) == 1:
+        print(formatting.escolher_cor(
+            'yellow', messages.tech_dicionario_medianas[palavra_secreta.lower()]))
+    if sum(indice_tema) == 1 and sum(indice_nivel) == 2:
+        print(formatting.escolher_cor(
+            'yellow', messages.tech_dicionario_dificeis[palavra_secreta.lower()]))
+
+    print()
     return ["_" for letra in palavra_secreta]
 
 
@@ -216,6 +236,14 @@ def letras_repetidas():  # APENAS PARA O JOGO SINGLEPLAYER
 
 def pede_chute():  # APENAS PARA O JOGO SINGLEPLAYER
     formatting.forma_linha()
+    print(palavra_secreta)
+    # if sum(indice_tema) == 0 and sum(indice_nivel) == 1:
+    #    print(messages.geral_medianas_dicionario[palavra_secreta])
+    # if sum(indice_tema) == 0 and sum(indice_nivel) == 2:
+    #    print(messages.geral_dificeis_dicionario[palavra_secreta])
+    # else:
+    #    print('nada')
+
     chute = input("Qual seu palpite sobre uma letra? ")
     formatting.forma_linha()
     chute = chute.strip().upper()
@@ -265,7 +293,7 @@ Deseja jogar novamente??
 Em caso positivo, digite S para continuar ou N para sair: '''
         reinicia_jogo = input(formatting.escolher_cor('yellow', texto))
 
-        if reinicia_jogo == 's'or reinicia_jogo == 'S':
+        if reinicia_jogo == 's' or reinicia_jogo == 'S':
             print('vamos jogar de novo')
             resposta_sim = 's'
             reiniciar == True
@@ -277,7 +305,7 @@ Em caso positivo, digite S para continuar ou N para sair: '''
             jogar()
             return resposta_sim
 
-        elif reinicia_jogo == 'n'or reinicia_jogo == 'N':
+        elif reinicia_jogo == 'n' or reinicia_jogo == 'N':
             print('Até Logo!')
             exit()
 
@@ -297,7 +325,7 @@ Deseja jogar novamente??
 Em caso positivo, digite S para continuar ou N para sair: '''
         reinicia_jogo = input(formatting.escolher_cor('yellow', texto))
 
-        if reinicia_jogo == 's'or reinicia_jogo == 'S' :
+        if reinicia_jogo == 's' or reinicia_jogo == 'S':
             print('vamos jogar de novo')
             resposta_sim = 's'
             reiniciar == True
@@ -309,7 +337,7 @@ Em caso positivo, digite S para continuar ou N para sair: '''
             jogar_2()
             return resposta_sim
 
-        elif reinicia_jogo == 'n'or reinicia_jogo == 'N':
+        elif reinicia_jogo == 'n' or reinicia_jogo == 'N':
             print('Até Logo!')
             exit()
 
@@ -484,6 +512,7 @@ def valida_vidas(sinaliza_vidas, vidas):  # PARA O MODO MULTIPLAYER
 def check_win(vidas, em_branco, numero_jogador, game_status):  # PARA O MODO MULTIPLAYER
     print(numero_jogador)
     print(f'Checa acertos: {em_branco} ')
+    # print(messages.tech_dicionario_dificeis[palavra_secreta])
     print()
     print('PRÓXIMO JOGADOR FAÇA SUA JOGADA: ')
 
@@ -522,13 +551,13 @@ def main():  # PARA O MODO MULTIPLAYER
 
         # ESCOLHA DA PALAVRA DA CATEGORIA TECH DIFICIEIS
 
-        auxiliar_1 = escolhe_palavras(messages.tech_medianas)
+        auxiliar_1 = escolhe_palavras(messages.tech_dificeis)
         palavra1 = auxiliar_1.lower()
 
-        auxiliar_2 = escolhe_palavras(messages.tech_medianas)
+        auxiliar_2 = escolhe_palavras(messages.tech_dificeis)
         palavra2 = auxiliar_2.lower()
 
-        auxiliar_3 = escolhe_palavras(messages.tech_medianas)
+        auxiliar_3 = escolhe_palavras(messages.tech_dificeis)
         palavra3 = auxiliar_3.lower()
 
         em_brancos1 = list(palavra1)
@@ -546,6 +575,8 @@ def main():  # PARA O MODO MULTIPLAYER
         formatting.forma_linha()
         print(
             f"{formatting.escolher_cor('blue', lista_jogadores[0].upper())}: Você terá que tentar advinhar a seguinte palavra. \nDigite somente uma letra por vez: \n", "\n", em_brancos1, '\n')
+        print(formatting.escolher_cor(
+            'yellow', messages.tech_dicionario_dificeis[palavra1]))
         print()
 
         formatting.forma_linha()
@@ -555,6 +586,8 @@ def main():  # PARA O MODO MULTIPLAYER
         formatting.forma_linha()
         print(
             f"{formatting.escolher_cor('green',lista_jogadores[1].upper())}: Você terá que tentar advinhar a seguinte palavra. \nDigite somente uma letra por vez: \n", "\n", em_brancos2, '\n')
+        print(formatting.escolher_cor(
+            'yellow', messages.tech_dicionario_dificeis[palavra2]))
         print()
 
         formatting.forma_linha()
@@ -564,6 +597,8 @@ def main():  # PARA O MODO MULTIPLAYER
         formatting.forma_linha()
         print(
             f"{formatting.escolher_cor('yellow',lista_jogadores[2].upper())}: Você terá que tentar advinhar a seguinte palavra. \nDigite somente uma letra por vez: \n", "\n", em_brancos2, '\n')
+        print(formatting.escolher_cor(
+            'yellow', messages.tech_dicionario_dificeis[palavra3]))
         print()
 
         formatting.forma_linha()
@@ -624,10 +659,10 @@ def main():  # PARA O MODO MULTIPLAYER
 
         # ESCOLHA DA PALAVRA DA CATEGORIA TECH DIFICIEIS
 
-        auxiliar_1 = escolhe_palavras(messages.tech_medianas)
+        auxiliar_1 = escolhe_palavras(messages.tech_dificeis)
         palavra1 = auxiliar_1.lower()
 
-        auxiliar_2 = escolhe_palavras(messages.tech_medianas)
+        auxiliar_2 = escolhe_palavras(messages.tech_dificeis)
         palavra2 = auxiliar_2.lower()
 
         numero_de_vidas = []  # lista para registrar as vidas perdidas do jogador 1
@@ -646,6 +681,8 @@ def main():  # PARA O MODO MULTIPLAYER
         formatting.forma_linha()
         print(
             f"{formatting.escolher_cor('blue', lista_jogadores[0].upper())}: Você terá que tentar advinhar a seguinte palavra. \nDigite somente uma letra por vez: \n", "\n", em_brancos1, '\n')
+        print(formatting.escolher_cor(
+            'yellow', messages.tech_dicionario_dificeis[palavra1]))
         print()
 
         formatting.forma_linha()
@@ -655,6 +692,8 @@ def main():  # PARA O MODO MULTIPLAYER
         formatting.forma_linha()
         print(
             f"{formatting.escolher_cor('green',lista_jogadores[1].upper())}: Você terá que tentar advinhar a seguinte palavra. \nDigite somente uma letra por vez: \n", "\n", em_brancos2, '\n')
+        print(formatting.escolher_cor(
+            'yellow', messages.tech_dicionario_dificeis[palavra2]))
         print()
         formatting.forma_linha()
 
@@ -690,12 +729,8 @@ def main():  # PARA O MODO MULTIPLAYER
         else:
             print("PARABÉNS AOS DOIS: DEU EMPATE!")
 
-        print(em_brancos1)
-        print(em_brancos2)
+        print(lista_jogadores[0], em_brancos1,
+              'A palavra secreta era: ', palavra1)
+        print(lista_jogadores[1], em_brancos2,
+              'A palavra secreta era: ', palavra2)
         reinicia_jogo_2()
-
-
-limpa_tela()
-imprime_mensagem_abertura()
-numero_jogadores()
-modo_de_jogo()
