@@ -214,19 +214,23 @@ geral_dificeis_dicionario = {
 }
 
 ################################### CATEGORIA DE PALAVRAS DO TEMA TECH #########################################################
-tech_faceis = ['float', 'dados', 'login', 'array', 'alias', 'chave', 'ascii', 'cache', 'debug',
-               'delay', 'query', 'valor', 'vetor', 'while',
-               ]
+tech_faceis = [
+    'float', 'dados', 'login', 'array', 'alias', 'chave', 'ascii', 'cache', 'debug',
+    'delay', 'query', 'valor', 'vetor', 'while',
+    ]
 
-tech_medianas = ['sensitive', 'atributos', 'agregacao', 'abstracao', 'variaveis', 'repeticao',
-                 'algoritmo', 'protocolo', 'interface', 'parametro', 'benchmark'
+tech_medianas = [
+    'sensitive', 'atributos', 'agregacao', 'abstracao', 'variaveis', 'repeticao',
+    'algoritmo', 'protocolo', 'interface', 'parametro', 'benchmark', 
 
-                 ]
+    ]
 
 tech_dificeis = [
     'emulador', 'nickname', 'downtime', 'intranet', 'download', 'wireless', 'password', 'keyboard',
     'freeware', 'terabyte', 'megabyte', 'kilobyte', 'booleano', 'controle', 'entidade', 'programa',
-    'variavel', ]
+    'variavel', 'features', 'database', 'settings', 'hardware', 'software', 'ambiente', 'importar',
+    'graficos', 'comandos', 'username', 'operador', 'condicao', 'notebook', 'iteracao', 'colchete',
+    ]
 
 categoria_tech = [tech_faceis, tech_medianas, tech_dificeis]
 
@@ -249,6 +253,22 @@ tech_dicionario_dificeis = {
     'entidade': 'DICA: pode ser concreta ou abstrata, incluindo associações, que guardarão informações no banco de dados',
     'programa': 'DICA: é a denominação que se dá a um conjunto organizado de instruções em linguagem natural ou codificada,',
     'variavel': 'DICA: é um espaço na memória do computador destinado a um dado que é alterado durante a execução do algoritmo.',
+    'features': 'DICA: são as características ou funções de um programa',
+    'database': 'DICA: é o banco de dados, um conjunto de arquivos que formam uma biblioteca de informações',
+    'settings': 'DICA: ajustes ou configurações de programas',
+    'hardware': 'DICA: conjunto dos equipamentos físicos que compõe um computador ou seus periféricos',
+    'software': 'DICA: reunião dos procedimentos e/ou instruções que determinam o funcionamento de um computador.',
+    'ambiente': 'DICA: o mesmo que sistema operacional',
+    'importar': 'DICA: trazer arquivos de um programa, computador, rede ou sistema para outro.',
+    'graficos': 'DICA: são representações visuais de dados e informações numéricas que servem para facilitar a interpretação destas',
+    'comandos': 'DICA: instruções determinadas em um programa de computador.',
+    'username': 'DICA: nome escolhido por um usuário',
+    'operador': 'DICA: são símbolos especiais que tem um significado para a linguagem e estão associados a determinadas operações',
+    'condicao': 'DICA: é uma expressão que pode ser verdadeira ou falsa.',
+    'notebook': 'DICA: é um tipo de ambiente integrado de desenvolvimento, como o Google Colab ou Anaconda Jupyter',
+    'iteracao': 'DICA: significa a repetição de um conjunto de instruções por uma quantidade finita de vezes ou até que uma condição seja aceita',
+    'colchete': 'DICA: são utilizados para definição de listas e arrays',
+
 }
 
 tech_dicionario_medianas = {
