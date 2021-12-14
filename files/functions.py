@@ -30,6 +30,9 @@ indice_nivel = []
 tema = []
 dica = ' '
 palavra_secreta = ' '
+letra_advinhada_aux = []
+letra_advinhada_aux1 = []
+letra_advinhada_aux2 = []
 saida = ' '
 lista_jogadores = []
 letras_digitadas = []
@@ -199,6 +202,7 @@ def imprime_mensagem_abertura():  # PARA O INÍCIO DO JOGO E LOOP DO SINGLEPLAYE
     formatting.forma_linha()
 
 
+# PARA AMBOS OS MODOS DE JOGO
 def inicializa_letras_acertadas(palavra_secreta):
 
     formatting.forma_linha()
@@ -237,12 +241,6 @@ def letras_repetidas():  # APENAS PARA O JOGO SINGLEPLAYER
 def pede_chute():  # APENAS PARA O JOGO SINGLEPLAYER
     formatting.forma_linha()
     print(palavra_secreta)
-    # if sum(indice_tema) == 0 and sum(indice_nivel) == 1:
-    #    print(messages.geral_medianas_dicionario[palavra_secreta])
-    # if sum(indice_tema) == 0 and sum(indice_nivel) == 2:
-    #    print(messages.geral_dificeis_dicionario[palavra_secreta])
-    # else:
-    #    print('nada')
 
     chute = input("Qual seu palpite sobre uma letra? ")
     formatting.forma_linha()
@@ -433,7 +431,7 @@ def jogar_2():  # PARA O MODO MULTIPLAYER
     main()
 
 
-def seleciona_letras(segredo, palavra_em_branco, numero_de_vidas):  # PARA O MODO SINGLEPLAYER
+def seleciona_letras(segredo, palavra_em_branco, numero_de_vidas):  # PARA O MODO MULTIPLAYER
 
     # Para assegurar a funcionalidade do código caso os usuários digitem números ou caracteres especiais
     somente_letra = False
@@ -457,6 +455,7 @@ def seleciona_letras(segredo, palavra_em_branco, numero_de_vidas):  # PARA O MOD
             print(f'O número de vidas perdidas é: {numero_de_vidas}')
 
             return palavra_em_branco, numero_de_vidas
+
         else:
             limpa_tela()
 
@@ -512,7 +511,7 @@ def valida_vidas(sinaliza_vidas, vidas):  # PARA O MODO MULTIPLAYER
 def check_win(vidas, em_branco, numero_jogador, game_status):  # PARA O MODO MULTIPLAYER
     print(numero_jogador)
     print(f'Checa acertos: {em_branco} ')
-    # print(messages.tech_dicionario_dificeis[palavra_secreta])
+
     print()
     print('PRÓXIMO JOGADOR FAÇA SUA JOGADA: ')
 
@@ -642,16 +641,44 @@ def main():  # PARA O MODO MULTIPLAYER
             limpa_tela()
             formatting.forma_linha()
             print(
-                f"{formatting.escolher_cor('blue',lista_jogadores[2].upper())} VOCÊ VENCEU!!!")
+                f"{formatting.escolher_cor('yellow',lista_jogadores[2].upper())} VOCÊ VENCEU!!!")
             print(images.vencedor_02)
             game_over = True
 
         else:
-            print("PARABÉNS AOS DOIS: DEU EMPATE!")
+            limpa_tela()
+            print("PARABÉNS AOS JOGADORES: DEU EMPATE!")
 
+        formatting.forma_linha()
+        print(formatting.escolher_cor('red', '='*42 +
+              ' E-S-T-A-T-I-S-T-I-C-A-S ' + '='*42))
+        print(formatting.escolher_cor('blue', lista_jogadores[0].upper()))
         print(em_brancos1)
+        print('Total de acertos ', (len(palavra1) -
+              (em_brancos1).count('_')), ' letras')
+        print('Total de ', len(numero_de_vidas), 'vidas perdidas')
+        print('Percentual de acertos é: {:.1%}'.format(
+            ((len(palavra1) - (em_brancos1).count('_'))/(len(palavra1)))))
+        print('A palavra secreta era: ', palavra1)
+        formatting.forma_linha()
+        print(formatting.escolher_cor('green', lista_jogadores[1].upper()))
         print(em_brancos2)
+        print('Total de acertos ', (len(palavra2) -
+              (em_brancos2).count('_')), ' letras')
+        print('Total de ', len(numero_de_vidas2), 'vidas perdidas')
+        print('Percentual de acertos é: {:.1%}'.format(
+            ((len(palavra2) - (em_brancos2).count('_'))/(len(palavra2)))))
+        print('A palavra secreta era: ', palavra2)
+        formatting.forma_linha()
+        print(formatting.escolher_cor('yellow', lista_jogadores[2].upper()))
         print(em_brancos3)
+        print('Total de acertos ', (len(palavra3) -
+              (em_brancos3).count('_')), ' letras')
+        print('Total de ', len(numero_de_vidas3), 'vidas perdidas')
+        print('Percentual de acertos é: {:.1%}'.format(
+            ((len(palavra3) - (em_brancos3).count('_'))/(len(palavra3)))))
+        print('A palavra secreta era: ', palavra3)
+        formatting.forma_linha()
 
         reinicia_jogo_2()
 
@@ -727,10 +754,29 @@ def main():  # PARA O MODO MULTIPLAYER
             game_over = True
 
         else:
+            limpa_tela()
             print("PARABÉNS AOS DOIS: DEU EMPATE!")
 
-        print(lista_jogadores[0], em_brancos1,
-              'A palavra secreta era: ', palavra1)
-        print(lista_jogadores[1], em_brancos2,
-              'A palavra secreta era: ', palavra2)
+        formatting.forma_linha()
+        print(formatting.escolher_cor('red', '='*42 +
+              ' E-S-T-A-T-I-S-T-I-C-A-S ' + '='*42))
+        print(formatting.escolher_cor('blue', lista_jogadores[0].upper()))
+        print(em_brancos1)
+        print('Total de acertos ', (len(palavra1) -
+              (em_brancos1).count('_')), ' letras')
+        print('Total de ', len(numero_de_vidas), 'vidas perdidas')
+        print('Percentual de acertos é: {:.1%}'.format(
+            ((len(palavra1) - (em_brancos1).count('_'))/(len(palavra1)))))
+        print('A palavra secreta era: ', palavra1)
+        formatting.forma_linha()
+        print(formatting.escolher_cor('green', lista_jogadores[1].upper()))
+        print(em_brancos2)
+        print('Total de acertos ', (len(palavra2) -
+              (em_brancos2).count('_')), ' letras')
+        print('Total de ', len(numero_de_vidas2), 'vidas perdidas')
+        print('Percentual de acertos é: {:.1%}'.format(
+            ((len(palavra2) - (em_brancos2).count('_'))/(len(palavra2)))))
+        print('A palavra secreta era: ', palavra2)
+        formatting.forma_linha()
+
         reinicia_jogo_2()
