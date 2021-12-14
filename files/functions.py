@@ -201,26 +201,6 @@ def imprime_mensagem_abertura():
 
 def inicializa_letras_acertadas(palavra_secreta):
     formatting.forma_linha()
-    if sum(indice_tema) == 0 and sum(indice_nivel) == 0:
-        print(formatting.escolher_cor(
-            'yellow', messages.geral_faceis_dicionario[palavra_secreta.lower()]))
-    if sum(indice_tema) == 0 and sum(indice_nivel) == 1:
-        print(formatting.escolher_cor(
-            'yellow', messages.geral_medianas_dicionario[palavra_secreta.lower()]))
-    if sum(indice_tema) == 0 and sum(indice_nivel) == 2:
-        print(formatting.escolher_cor(
-            'yellow', messages.geral_dificeis_dicionario[palavra_secreta.lower()]))
-    if sum(indice_tema) == 1 and sum(indice_nivel) == 0:
-        print(formatting.escolher_cor(
-            'yellow', messages.tech_dicionario_faceis[palavra_secreta.lower()]))
-    if sum(indice_tema) == 1 and sum(indice_nivel) == 1:
-        print(formatting.escolher_cor(
-            'yellow', messages.tech_dicionario_medianas[palavra_secreta.lower()]))
-    if sum(indice_tema) == 1 and sum(indice_nivel) == 2:
-        print(formatting.escolher_cor(
-            'yellow', messages.tech_dicionario_dificeis[palavra_secreta.lower()]))
-
-    print()
     return ["_" for letra in palavra_secreta]
 
 
@@ -238,14 +218,6 @@ def letras_repetidas():
 
 def pede_chute():
     formatting.forma_linha()
-    print(palavra_secreta)
-    # if sum(indice_tema) == 0 and sum(indice_nivel) == 1:
-    #    print(messages.geral_medianas_dicionario[palavra_secreta])
-    # if sum(indice_tema) == 0 and sum(indice_nivel) == 2:
-    #    print(messages.geral_dificeis_dicionario[palavra_secreta])
-    # else:
-    #    print('nada')
-
     chute = input("Qual seu palpite sobre uma letra? ")
     formatting.forma_linha()
     chute = chute.strip().upper()
@@ -276,6 +248,7 @@ def imprime_mensagem_perdedor(palavra_secreta):
     print(images.game_over)
 
 
+<<<<<<< HEAD
 def reinicia_jogo():  # PARA O JOGO MODO SINGLEPLAYER
 
     reiniciar = False
@@ -341,6 +314,9 @@ Em caso positivo, digite S para continuar ou N para sair: '''
 
 
 def desenha_forca(erros):  # PARA AMBOS OS MODOS DE JOGO
+=======
+def desenha_forca(erros):
+>>>>>>> parent of e5df7a5 (Adequações gerais - Equipe)
 
     if(erros == 1):
         print(formatting.escolher_cor('yellow', images.forca[0]))
@@ -508,7 +484,6 @@ def valida_vidas(sinaliza_vidas, vidas):
 def check_win(vidas, em_branco, numero_jogador, game_status):
     print(numero_jogador)
     print(f'Checa acertos: {em_branco} ')
-    # print(messages.tech_dicionario_dificeis[palavra_secreta])
     print()
     print()
 
@@ -546,6 +521,7 @@ def main():
     if len(lista_jogadores) == 3:  # CAMINHO PARA TRÊS JOGADORES SIMULTÂNEOS
 
         # ESCOLHA DA PALAVRA DA CATEGORIA TECH DIFICIEIS
+<<<<<<< HEAD
 
         auxiliar_1 = escolhe_palavras(messages.tech_dificeis)
         palavra1 = auxiliar_1.lower()
@@ -555,6 +531,11 @@ def main():
 
         auxiliar_3 = escolhe_palavras(messages.tech_dificeis)
         palavra3 = auxiliar_3.lower()
+=======
+        palavra1 = escolhe_palavras(messages.tech_dificeis)
+        palavra2 = escolhe_palavras(messages.tech_dificeis)
+        palavra3 = escolhe_palavras(messages.tech_dificeis)
+>>>>>>> parent of e5df7a5 (Adequações gerais - Equipe)
 
         em_brancos1 = list(palavra1)
         em_brancos2 = list(palavra2)
@@ -568,6 +549,7 @@ def main():
 
         for i in range(len(em_brancos1)):
             em_brancos1[i] = "_"
+<<<<<<< HEAD
         formatting.forma_linha()
         print(
             f"{formatting.escolher_cor('blue', lista_jogadores[0].upper())}: Você terá que tentar advinhar a seguinte palavra. \nDigite somente uma letra por vez: \n", "\n", em_brancos1, '\n')
@@ -576,26 +558,39 @@ def main():
         print()
 
         formatting.forma_linha()
+=======
+        print(f"{lista_jogadores[0]}: Você terá que tentar advinhar a seguinte palavra. Digite somente uma letra por vez: ",
+              em_brancos1)
+        print(formatting.forma_linha())
+>>>>>>> parent of e5df7a5 (Adequações gerais - Equipe)
 
         for i in range(len(em_brancos2)):
             em_brancos2[i] = "_"
         print(
+<<<<<<< HEAD
             f"{formatting.escolher_cor('green',lista_jogadores[1].upper())}: Você terá que tentar advinhar a seguinte palavra. \nDigite somente uma letra por vez: \n", "\n", em_brancos2, '\n')
         print(formatting.escolher_cor(
             'yellow', messages.tech_dicionario_dificeis[palavra2]))
         print()
 
         formatting.forma_linha()
+=======
+            f"{lista_jogadores[1]}: Você terá que tentar advinhar a seguinte palavra. Digite somente uma letra por vez: ", em_brancos2)
+>>>>>>> parent of e5df7a5 (Adequações gerais - Equipe)
 
         for i in range(len(em_brancos3)):
             em_brancos3[i] = "_"
         print(
+<<<<<<< HEAD
             f"{formatting.escolher_cor('yellow',lista_jogadores[2].upper())}: Você terá que tentar advinhar a seguinte palavra. \nDigite somente uma letra por vez: \n", "\n", em_brancos2, '\n')
         print(formatting.escolher_cor(
             'yellow', messages.tech_dicionario_dificeis[palavra3]))
         print()
 
         formatting.forma_linha()
+=======
+            f"{lista_jogadores[2]}: Você terá que tentar advinhar a seguinte palavra. Digite somente uma letra por vez: ", em_brancos3)
+>>>>>>> parent of e5df7a5 (Adequações gerais - Equipe)
 
         while len(numero_de_vidas) < 7 and len(numero_de_vidas2) < 7 and len(numero_de_vidas3) < 7 and game_over == False:
             player = 1
@@ -634,8 +629,11 @@ def main():
 
     if len(lista_jogadores) == 2:  # CAMINHO PARA DOIS JOGADORES SIMULTÂNEOS
 
+<<<<<<< HEAD
         # ESCOLHA DA PALAVRA DA CATEGORIA TECH DIFICIEIS
 
+=======
+>>>>>>> parent of e5df7a5 (Adequações gerais - Equipe)
         auxiliar_1 = escolhe_palavras(messages.tech_dificeis)
         palavra1 = auxiliar_1.lower()
 
@@ -655,9 +653,13 @@ def main():
 
             em_brancos1[i] = "_"
         print(
+<<<<<<< HEAD
             f"{formatting.escolher_cor('blue', lista_jogadores[0].upper())}: Você terá que tentar advinhar a seguinte palavra. \nDigite somente uma letra por vez: \n", "\n", em_brancos1, '\n')
         print(formatting.escolher_cor(
             'yellow', messages.tech_dicionario_dificeis[palavra1]))
+=======
+            f"{lista_jogadores[0]}: Você terá que tentar advinhar a seguinte palavra. \nDigite somente uma letra por vez: \n", "\n", em_brancos1, '\n')
+>>>>>>> parent of e5df7a5 (Adequações gerais - Equipe)
         print()
         # print(messages.tech_dicionario[palavra1])
         print(formatting.forma_linha())
@@ -666,9 +668,13 @@ def main():
         for i in range(len(em_brancos2)):
             em_brancos2[i] = "_"
         print(
+<<<<<<< HEAD
             f"{formatting.escolher_cor('green',lista_jogadores[1].upper())}: Você terá que tentar advinhar a seguinte palavra. \nDigite somente uma letra por vez: \n", "\n", em_brancos2, '\n')
         print(formatting.escolher_cor(
             'yellow', messages.tech_dicionario_dificeis[palavra2]))
+=======
+            f"{lista_jogadores[1]}: Você terá que tentar advinhar a seguinte palavra. \nDigite somente uma letra por vez: \n", "\n", em_brancos2, '\n')
+>>>>>>> parent of e5df7a5 (Adequações gerais - Equipe)
         print()
         print(formatting.forma_linha())
 
@@ -700,8 +706,19 @@ def main():
         else:
             print("PARABÉNS AOS DOIS: DEU EMPATE!")
 
+<<<<<<< HEAD
         print(lista_jogadores[0], em_brancos1,
               'A palavra secreta era: ', palavra1)
         print(lista_jogadores[1], em_brancos2,
               'A palavra secreta era: ', palavra2)
         reinicia_jogo_2()
+=======
+        print(em_brancos1)
+        print(em_brancos2)
+
+
+limpa_tela()
+imprime_mensagem_abertura()
+numero_jogadores()
+modo_de_jogo()
+>>>>>>> parent of e5df7a5 (Adequações gerais - Equipe)
